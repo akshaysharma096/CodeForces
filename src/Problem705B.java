@@ -16,6 +16,7 @@ public class Problem705B {
 		for(int i=0;i<q;i++){
 			int q_type = sc.nextInt();
 			int app_type = sc.nextInt();
+			sc.nextLine();
 			if(q_type == 1){
 				if(map.containsKey(app_type)){
 					map.put(app_type,map.get(app_type)+1);
@@ -40,6 +41,7 @@ public class Problem705B {
 			}
 			System.out.println(sum);
 		}
+		
 	}
 }
 
