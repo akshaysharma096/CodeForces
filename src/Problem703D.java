@@ -15,12 +15,12 @@ public class Problem703D {
 		for(int i=0;i<q;i++){
 			int l = sc.nextInt()-1;
 			int r = sc.nextInt()-1;
-			findXor(l, r, arr);
+			int result = findXor(l, r, arr);
+			System.out.println(result);
 		}
-		sc.close();
 	}
 	
-	public static void findXor(int l, int r, int[]arr){
+	public static int findXor(int l, int r, int[]arr){
 		HashMap<Integer, Integer> map = new HashMap<>();
 		int result = 0;
 		for(int i=l;i<=r;i++){
@@ -31,7 +31,6 @@ public class Problem703D {
 				map.put(arr[i],1); 
 			}
 		}
-//		System.out.println(map);
 		Stack<Integer> st = new Stack<Integer>();
 		for(int i=l;i<=r;i++){
 			if(map.containsKey(arr[i])){
@@ -51,6 +50,6 @@ public class Problem703D {
 				result = result^st.pop();
 			}
 		}
-		System.out.println(result);
+		return result;
 	}
 }
